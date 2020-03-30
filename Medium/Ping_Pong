@@ -23,6 +23,11 @@
  */
 
 function pingPong(arr, win) {
-	let ret = "Ping! Pong! ".repeat(arr.length).split(' ');
-	return win ? ret.slice(0, ret.length-1) : ret.slice(0, ret.length-2);
+	let ret = arr.map(e => [e, "Pong!"]).flat();
+	return win ? ret : ret.slice(0, ret.length-1);
 }
+
+// function pingPong(arr, win) {
+// 	let ret = "Ping! Pong! ".repeat(arr.length).split(' ');
+// 	return win ? ret.slice(0, ret.length-1) : ret.slice(0, ret.length-2);
+// }
